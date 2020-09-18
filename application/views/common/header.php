@@ -9,7 +9,10 @@
     <meta name="description" content="">
     <meta name="author" content="Hasina Tahiriniaina ANDRIANTSOA">
 
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous"> -->
+    <!-- Default -->
     <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+
     <link href="assets/css/bootstrap-theme.min.css" rel="stylesheet">
 
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
@@ -22,4 +25,4 @@
     </script>
 </head>
 
-<body>
+<body ng-app="myApp">

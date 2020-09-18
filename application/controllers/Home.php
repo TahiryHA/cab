@@ -19,16 +19,34 @@ class Home extends CI_Controller {
 		$this->load->view('partial/student/student_details');
 	}
 
+	public function student_stat()
+	{
+		$this->load->view('partial/student/stat');
+	}
+
 	public function faker(){
 		$faker = Faker\Factory::create();
 		$this->load->model('student');
-		for ($i=0; $i < 10 ; $i++) { 
+		for ($i=0; $i < 5 ; $i++) { 
 
 			$options = [
 				'nie' => 'SE'.date('Y').'000'.$i,
 				'name' => $faker->firstName(),
 				'username' => $faker->lastName(),
-				'address' => $faker->address()
+				'address' => $faker->address(),
+				'sexe' => 'Homme'
+			];
+
+			$this->student->add($options);
+		}
+		for ($i=5; $i < 10 ; $i++) { 
+
+			$options = [
+				'nie' => 'SE'.date('Y').'000'.$i,
+				'name' => $faker->firstName(),
+				'username' => $faker->lastName(),
+				'address' => $faker->address(),
+				'sexe' => 'Femme'
 			];
 
 			$this->student->add($options);

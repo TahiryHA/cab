@@ -3,6 +3,33 @@ function ListStudentCtrl($scope, $location, Student) {
   $scope.students = Student.query();
   $scope.title = "Liste des étudiants";
 
+  $scope.man = function () {
+    var len = $scope.students.length;
+
+    var man = 0;
+
+    for (var i = 0; i < len; i++) {
+      if ($scope.students[i].sexe == "Homme") {
+        man++;
+      }
+    }
+    res = Math.round((man * 100) / len)
+    return man;
+  };
+  $scope.woman = function () {
+    var len = $scope.students.length;
+
+    var woman = 0;
+
+    for (var i = 0; i < len; i++) {
+      if ($scope.students[i].sexe == "Femme") {
+        woman++;
+      }
+    }
+    res = Math.round((woman * 100) / len);
+    return woman;
+  };
+
   $scope.destroy = function (Student) {
     Student.destroy(function () {
       $scope.students.splice($scope.students.indexOf(Student), 1);
@@ -51,6 +78,20 @@ function EditStudentCtrl($scope, $location, $routeParams, Student) {
     $scope.student.update(function () {
       $location.path("/");
     });
+  };
+}
+
+function StatCtrl($scope, $location, $routeParams, Student) {
+  $woman = 0;
+  $scope.woman = function () {
+    $woman = $scope.total - $scope.man;
+    return $woman;
+  };
+  $scope.resultMan = function () {
+    return Math.round(($scope.man * 100) / $scope.total);
+  };
+  $scope.resultWoman = function () {
+    return Math.round(($woman * 100) / $scope.total);
   };
 }
 

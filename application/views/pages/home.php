@@ -15,8 +15,8 @@
                 <li>
                     <a class="brand" href="<?php echo base_url(); ?>"><span class="glyphicon glyphicon-home"></span>
                         Acceuil</a>
+                    
                 </li>
-
             </ul>
         </nav>
     </div>
@@ -29,7 +29,7 @@
     </div>
 </div>
 <div class="container">
-    <div ng-app="myApp">
+    <div>
         <div ng-view></div>
     </div>
 </div>

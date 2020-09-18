@@ -21,11 +21,11 @@ class Migration_add_users extends CI_Migration{
                 'type' => 'VARCHAR',
                 'constraint' => '100'
             ],
-            // 'sexe' => [
-            //     'type' => 'ENUM("homme","femme")',
-            //     'default' => 'homme',
-            //     'null' => false
-            // ],
+            'sexe' => [
+                'type' => 'ENUM("Homme","Femme")',
+                'default' => 'Homme',
+                'null' => false
+            ],
             'address' => [
                 'type' => 'VARCHAR',
                 'constraint' => '100',

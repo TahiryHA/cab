@@ -6,6 +6,20 @@
 
 <form name="myForm" id="myForm">
 
+    <div class="form-group" ng-hide='student.id' ng-class="{error: myForm.sexe.$invalid}">
+        <label class="control-label" for="sexe">Sexe</label>
+
+
+        <select name="sexe" class="form-control" ng-model="student.sexe">
+            <option value="" disabled selected>Sexe</option>
+            <option value="Homme">Homme</option>
+            <option value="Femme">Femme</option>
+
+        </select>
+        <span ng-show="myForm.sexe.$error.required" class="help-inline">Required</span>
+
+    </div>
+
     <div class="form-group" ng-hide='student.id' ng-class="{error: myForm.nie.$invalid}">
         <label class="control-label" for="nie">NIE</label>
 
